@@ -1,0 +1,120 @@
+Create Database ProgrammingTutorials
+
+use ProgrammingTutorials
+
+Go
+
+Create table People(
+ID int identity(1,1),
+FirstName varchar(50),
+LastName varchar(50),
+City varchar(50),
+DOB datetime,
+Drink varchar(50)
+)
+
+Go
+
+Create Table PeopleNormalised(
+ID int identity(1,1),
+FirstName varchar(50),
+LastName varchar(50),
+CityID int,
+DOB datetime,
+DrinkID int
+)
+
+Create Table City(
+ID int identity(1,1),
+CityName varchar(50),
+CityPopulation int
+)
+
+Create Table Drinks(
+ID int identity(1,1),
+DrinkName varchar(50),
+AlcaholContent float
+)
+
+Go
+
+
+Insert Into People(FirstName,LastName,city,DOB,Drink)
+SELECT 'Scott', 'Johnson', 'London', '1991-03-14', 'Fosters'
+
+Insert Into People(FirstName,LastName,city,DOB,Drink)
+SELECT 'Jennifer', 'Smith', 'London', '1991-10-18', 'Strongbow'
+
+Insert Into People(FirstName,LastName,city,DOB,Drink)
+SELECT 'Marc', 'Blackburn', 'Manchester', '1989-02-01', 'Red Wine'
+
+Insert Into People(FirstName,LastName,city,DOB,Drink)
+SELECT 'Ian', 'Bangs', 'London', '1972-06-22', 'Gin'
+
+Insert Into People(FirstName,LastName,city,DOB,Drink)
+SELECT 'Mark', 'Thomas', 'London', '1988-12-30', 'Jack Daniels'
+
+Insert Into People(FirstName,LastName,city,DOB,Drink)
+SELECT 'Natasha', 'James', 'New York', '1993-05-01', 'Vodka'
+
+
+Go
+
+Insert Into City(CityName, CityPopulation)
+SELECT 'London', 8136000
+
+Insert Into City(CityName, CityPopulation)
+SELECT 'Manchester', 510746
+
+Insert Into City(CityName, CityPopulation)
+SELECT 'New York', 8623000
+
+Go
+
+Insert Into Drinks(DrinkName, AlcaholContent)
+SELECT 'Fosters', 4.5
+
+Insert Into Drinks(DrinkName, AlcaholContent)
+SELECT 'Strongbow', 4.0
+
+Insert Into Drinks(DrinkName, AlcaholContent)
+SELECT 'Red Wine', 12
+
+Insert Into Drinks(DrinkName, AlcaholContent)
+SELECT 'Gin', 35
+
+Insert Into Drinks(DrinkName, AlcaholContent)
+SELECT 'Jack Danies', 40
+
+Insert Into Drinks(DrinkName, AlcaholContent)
+SELECT 'Vodka', 40
+
+Go
+
+Insert Into PeopleNormalised(FirstName,LastName,CityID,DOB,DrinkID)
+SELECT 'Scott', 'Johnson', 1, '1991-03-14', 1
+
+Insert Into PeopleNormalised(FirstName,LastName,CityID,DOB,DrinkID)
+SELECT 'Jennifer', 'Smith', 1, '1991-10-18', 2
+
+Insert Into PeopleNormalised(FirstName,LastName,CityID,DOB,DrinkID)
+SELECT 'Marc', 'Blackburn', 2, '1989-02-01', 3
+
+Insert Into PeopleNormalised(FirstName,LastName,CityID,DOB,DrinkID)
+SELECT 'Ian', 'Bangs', 1, '1972-06-22', 4
+
+Insert Into PeopleNormalised(FirstName,LastName,CityID,DOB,DrinkID)
+SELECT 'Mark', 'Thomas', 1, '1988-12-30', 5
+
+Insert Into PeopleNormalised(FirstName,LastName,CityID,DOB,DrinkID)
+SELECT 'Natasha', 'James', 3, '1993-05-01', 6
+
+Go
+
+SELECT * From People
+
+SELECT * FRom PeopleNormalised
+
+SELECT * From City
+
+SELECT * From Drinks
